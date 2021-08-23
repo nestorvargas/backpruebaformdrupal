@@ -23,6 +23,7 @@ use \Symfony\Component\HttpFoundation\Response;
 function backprueba_theme($existing, $type, $theme, $path) {
 
 return [
+
     'registro_data' => [
         'variables' => [
             'titulo' => 'Título por defecto',

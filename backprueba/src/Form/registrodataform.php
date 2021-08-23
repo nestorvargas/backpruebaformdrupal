@@ -34,47 +34,47 @@ class registrodataform extends FormBase {
 			'#type'     => 'textfield',
 			'#title'    => $this->t('Nombre'),
 			'#required' => TRUE,
-      '#prefix'   => '<div class="col-md-6">',
+      		'#prefix'   => '<div class="col-md-6">',
 		];
 
-    $form['identificacion'] = [
-      '#type'     => 'textfield',
-      '#title'    => $this->t('Identificación'),
-      '#required' => TRUE,
-      '#suffix' => '</div>',
-    ];
+	    $form['identificacion'] = [
+	      '#type'     => 'textfield',
+	      '#title'    => $this->t('Identificación'),
+	      '#required' => TRUE,
+	      '#suffix' => '</div>',
+	    ];
 
 
-    $form['fechanacimiento'] = [
-      '#type' => 'date',
-      '#title'    => $this->t('Fecha de Nacimiento'),
-      '#description' => t('Por favor escoger fecha de nacimiento'),
-      '#required' => TRUE,
-      '#date_format' => 'Y-m-d',
-      '#default_value' => date('Y-m-d'),
-      '#prefix'   => '<div class="col-md-6">',
-    ];
+	    $form['fechanacimiento'] = [
+	      '#type' => 'date',
+	      '#title'    => $this->t('Fecha de Nacimiento'),
+	      '#description' => t('Por favor escoger fecha de nacimiento'),
+	      '#required' => TRUE,
+	      '#date_format' => 'Y-m-d',
+	      '#default_value' => date('Y-m-d'),
+	      '#prefix'   => '<div class="col-md-6">',
+	    ];
 
 		$form['cargo'] = [
 			'#title'    => $this->t('Cargo'),
 			'#required' => TRUE,
-      '#type' => 'select',
-      '#options' => [
-          '1' => $this->t('Administrador'),
-          '2' => $this->t('Webmaster'),
-          '3' => $this->t('Desarrollador'),
-        ],
-      '#suffix' => '</div>',
+      		'#type' => 'select',
+		      '#options' => [
+		          '1' => $this->t('Administrador'),
+		          '2' => $this->t('Webmaster'),
+		          '3' => $this->t('Desarrollador'),
+		        ],
+      		'#suffix' => '</div>',
 		];
 
 
 		$form['submit'] = [
 			'#type'  => 'submit',
 			'#value' => $this->t('Guardar'),
-      '#prefix'   => '<div class="col-md-12">',
-      '#suffix' => '</div>',
-
+		    '#prefix'   => '<div class="col-md-12">',
+		    '#suffix' => '</div>',
 		];
+
 		return $form;
 	}
 
@@ -86,16 +86,16 @@ class registrodataform extends FormBase {
 		// validaciones necesarias
 
 		if (empty($form_state->getValue('nombre'))) {
-      $form_state->setErrorBynombre('nombre', $this->t('Es necesario introducir un Nombre'));
-    }
+	      $form_state->setErrorBynombre('nombre', $this->t('Es necesario introducir un Nombre'));
+	    }
 
-		if (empty($form_state->getValue('identificacion'))) {
-			$form_state->setErrorBynombre('identificacion', $this->t('Es necesario introducir una Identificacion'));
-		}
+			if (empty($form_state->getValue('identificacion'))) {
+				$form_state->setErrorBynombre('identificacion', $this->t('Es necesario introducir una Identificacion'));
+			}
 
-    if (empty($form_state->getValue('cargo'))) {
-          $form_state->setErrorBynombre('cargo', $this->t('Es necesario introducir un Cargo'));
-    }
+	    if (empty($form_state->getValue('cargo'))) {
+	          $form_state->setErrorBynombre('cargo', $this->t('Es necesario introducir un Cargo'));
+	    }
 
 	}
 
@@ -108,20 +108,20 @@ class registrodataform extends FormBase {
 	$values = array(
 			'nombre' => $form_state->getValue('nombre'),
 			'identificacion' => $form_state->getValue('identificacion'),
-      'fechanacimiento' => $form_state->getValue('fechanacimiento'),
-      'cargo' => $form_state->getValue('cargo'),
+      		'fechanacimiento' => $form_state->getValue('fechanacimiento'),
+      		'cargo' => $form_state->getValue('cargo'),
 		);
 
 
-   switch ($values['cargo']) {
-      case '1':
-           $estado = 1;
-        break;
+	   switch ($values['cargo']) {
+	      case '1':
+	           $estado = 1;
+	        break;
 
-      default:
-           $estado = 0;
-        break;
-    }
+	      default:
+	           $estado = 0;
+	        break;
+	    }
 
 
 		$table = 'example_users';
@@ -130,9 +130,9 @@ class registrodataform extends FormBase {
 		                   ->fields(array(
 				'nombre' => $values['nombre'],
 				'identificacion' => $values['identificacion'],
-        'fechanacimiento' => $values['fechanacimiento'],
-        'cargo' => $values['cargo'],
-        'estado' => $estado,
+        		'fechanacimiento' => $values['fechanacimiento'],
+        		'cargo' => $values['cargo'],
+        		'estado' => $estado,
 			))
 			->execute();
 

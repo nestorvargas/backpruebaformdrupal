@@ -13,12 +13,8 @@ backpruebalib:
     - core/drupalSettings
     - core/jquery.once
 jquery_validate:
-  css:
-    component:
-      css/jquery.dataTables.min.css: {}
   js:
     js/jquery.validate.js: {}
-    js/jquery.dataTables.min.js: {}
 bootstrap_cdn:
   js:
     //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js: {}

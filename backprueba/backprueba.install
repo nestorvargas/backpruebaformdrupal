@@ -49,7 +49,7 @@ function backprueba_schema() {
         'default' => '',
       ),
 
-       'estado' => array(
+      'estado' => array(
         'description' => 'Estado',
         'type' => 'varchar',
         'length' => 10,
