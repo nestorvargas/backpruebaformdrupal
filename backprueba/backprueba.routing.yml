@@ -1,0 +1,13 @@
+backprueba.formdata:
+ path: '/example-module/form'
+ defaults:
+   _controller: '\Drupal\backprueba\Controller\DataController::registro'
+ requirements:
+   _permission: 'access content'
+
+# backprueba.data:
+#  path: '/example-module/data'
+#  defaults:
+#    _controller: '\Drupal\backprueba\Controller\DataController::datarest'
+#  requirements:
+#    _permission: 'access content'

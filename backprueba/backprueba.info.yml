@@ -1,0 +1,6 @@
+name: Prueba Drupal Back
+type: module
+description: Prueba de drupal forms y rest
+package: Custom
+core: '8.x'
+version: 1.0

@@ -1,0 +1,69 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+* Implements hook_schema().
+ * @ingroup asuform 
+*/
+function backprueba_schema() {
+
+ $schema['example_users'] = array(
+  'description' => 'The table users.',
+    'fields' => array(
+
+      'id' => array(
+        'description' => '', 
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),  
+      'nombre' => array(
+        'description' => 'Nombre',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '', 
+      ),  
+
+      'identificacion' => array(
+        'description' => 'Identificación user',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+
+      'fechanacimiento' => array(
+        'description' => 'Fecha Nacimiento',
+        'type' => 'varchar',
+        'mysql_type' => 'date',
+        'not null' => FALSE,
+      ),
+
+
+      'cargo' => array(
+        'description' => 'Cargo',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+
+       'estado' => array(
+        'description' => 'Estado',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+
+
+
+
+
+    ),  
+    'primary key' => array('id'),
+  );  
+  return $schema;
+
+}
