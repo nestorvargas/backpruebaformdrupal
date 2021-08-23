@@ -5,9 +5,9 @@ backprueba.formdata:
  requirements:
    _permission: 'access content'
 
-# backprueba.data:
-#  path: '/example-module/data'
-#  defaults:
-#    _controller: '\Drupal\backprueba\Controller\DataController::datarest'
-#  requirements:
-#    _permission: 'access content'
+ backprueba.data:
+  path: '/example-module/data'
+  defaults:
+    _controller: '\Drupal\backprueba\Controller\DataController::datarest'
+  requirements:
+    _permission: 'access content'

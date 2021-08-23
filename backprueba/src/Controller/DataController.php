@@ -39,6 +39,10 @@ class DataController extends ControllerBase {
 
 	}
 
+	public function datarest(){
+
+	}
+
 
 }
 
